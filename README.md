@@ -1,66 +1,157 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛒 Madura Mart — Grocery Store Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/UI-Bootstrap_5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Midtrans](https://img.shields.io/badge/Payment-Midtrans-002855?style=for-the-badge)
 
-## About Laravel
+> Web-based product and inventory management system built with **Laravel** and **MySQL** for **Madura Mart**, a grocery store. It covers product and stock management (stock in, stock out, and stock opname), online ordering with **Midtrans** payment, and owner sales reports with **Excel and PDF** export.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📌 Project Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Madura Mart needed one place to manage its products, keep stock accurate, sell online, and see how the store is performing. The system has three roles:
 
-## Learning Laravel
+- **Customer** — searches products, orders online, and pays with Midtrans.
+- **Admin** — manages products, categories, stock movements, and incoming orders.
+- **Owner** — monitors sales, shipping costs, best-selling products, and user accounts.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚀 Key Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🛍️ Customer
+- Register, log in, and manage the profile.
+- Search products and view product details.
+- Shopping cart and checkout with **Midtrans Snap** (a flat shipping fee is added to each order).
+- Order history.
 
-## Laravel Sponsors
+### 🧑‍💼 Admin
+- Admin dashboard.
+- Product management (CRUD) with purchase price and selling price.
+- Category management (CRUD).
+- **Stock in** and **stock out** records, each exportable to PDF.
+- **Stock opname** (physical stock count) with adjustment history and PDF export.
+- Transaction list and delivery confirmation.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 📈 Owner
+- Owner dashboard.
+- Sales report with search and **Excel / PDF** export.
+- Sales chart.
+- Best-selling products.
+- Shipping cost (ongkir) report with Excel / PDF export.
+- User list.
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🛠️ Technology Stack
 
-## Contributing
+| Component | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Framework** | [Laravel 11](https://laravel.com/) (PHP 8.2) | Web application |
+| **Database** | MySQL | Data storage |
+| **Views** | Blade, [Bootstrap 5](https://getbootstrap.com/), Bootstrap Icons | User interface |
+| **Payment Gateway** | [Midtrans](https://midtrans.com/) (`midtrans/midtrans-php`, Snap) | Online payment |
+| **Excel Export** | [Laravel Excel](https://laravel-excel.com/) (`maatwebsite/excel`) | Sales and shipping reports |
+| **PDF Export** | [DomPDF](https://github.com/barryvdh/laravel-dompdf), TCPDF | Reports and stock documents |
+| **Authentication** | Laravel Fortify, role middleware (`admin`, `owner`) | Login and role-based access |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🌐 System Architecture
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```text
+Customer ──► Search & cart ──► Checkout ──► Midtrans payment ──► Transaction saved
+                                                                     │
+Admin ───► Products · Categories · Stock in/out · Stock opname ──────┤──► Delivery confirmation
+                                                                     │
+Owner ───► Sales report · Chart · Best sellers · Shipping report ◄────┘   (Excel / PDF export)
+```
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📁 Project Structure
 
-## License
+```text
+app/
+├── Exports/               # LaporanExport, OngkirExport (Laravel Excel)
+├── Http/Controllers/      # produk, kategori, Transaksi, Laporan, Midtrans, Search, user_control
+└── Models/                # produk, kategori, Transaction, DetailTransaksi, StokMasuk,
+                           # StokKeluar, StokOpname, StokHistori, HistoriOpname, User
+resources/views/
+├── auth/                  # Login
+├── dashboard_admin/       # Admin: products, categories, transactions
+├── dashboard_owner/       # Owner: reports, chart, best sellers, shipping report, users
+├── order.blade.php        # Customer storefront
+├── keranjang.blade.php    # Shopping cart
+└── profile.blade.php      # Customer profile
+routes/web.php             # Routes grouped by role
+toko_aldi.sql              # Full MySQL database dump (schema + sample data)
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## ⚙️ Installation & Setup
+
+### Prerequisites
+- PHP 8.2+ and Composer
+- Node.js & npm
+- MySQL / MariaDB (for example via Laragon or XAMPP)
+- A [Midtrans](https://dashboard.midtrans.com/) account (sandbox is fine for testing)
+
+### Steps
+```bash
+git clone https://github.com/Aldidwiirawan/sembako.git
+cd sembako
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+```
+
+Create a MySQL database named `toko_aldi` and import the full dump, which contains every table the app uses:
+```bash
+mysql -u root -p toko_aldi < toko_aldi.sql
+```
+> The Laravel migrations in this repository do not create all tables (for example the transaction and stock tables), so importing `toko_aldi.sql` is the required setup step.
+
+Then link the storage folder for product images:
+```bash
+php artisan storage:link
+```
+
+---
+
+## 🔐 Environment Variables
+
+| Variable | Description |
+| :--- | :--- |
+| `DB_CONNECTION` | `mysql` |
+| `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` | MySQL connection (`DB_DATABASE=toko_aldi`) |
+| `MIDTRANS_SERVER_KEY` | Midtrans server key |
+| `MIDTRANS_CLIENT_KEY` | Midtrans client key |
+| `MIDTRANS_IS_PRODUCTION` | `false` for sandbox, `true` for production |
+
+> ⚠️ Never commit the `.env` file or your Midtrans keys.
+
+---
+
+## ▶️ How to Run
+
+```bash
+php artisan serve
+```
+Open `http://127.0.0.1:8000`. The login page redirects each role to its own dashboard.
+
+---
+
+## 👨‍💻 Author
+
+Built during the **Web Developer internship at Dinas Kominfo Kabupaten Kediri** (June–August 2025) by a team of three interns.
+
+**Aldi Dwi Irawan** — built the customer, admin, and owner modules
+- GitHub: [@Aldidwiirawan](https://github.com/Aldidwiirawan)
+- Portfolio: [aldidwiirawan.vercel.app](https://aldidwiirawan.vercel.app)
+- Email: aldidwiirawan2004@gmail.com
